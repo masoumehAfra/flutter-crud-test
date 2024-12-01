@@ -63,11 +63,14 @@ class RegisterCubit extends Cubit<RegisterState> {
   }
 
   bool checkValidations() {
-    if ((state.firstName?.trim().isEmpty ?? true) ||
-        (state.lastName?.trim().isEmpty ?? true) ||
-        (!state.email.value.isRight()) ||
-        (state.dateBirth?.trim().isEmpty ?? true) ||
-        (!state.phoneNumber.value.isRight())
+    if (
+
+    // (state.firstName?.trim().isEmpty ?? true) ||
+    //     (state.lastName?.trim().isEmpty ?? true) ||
+        (!state.email.value.isRight())
+    //||
+        // (state.dateBirth?.trim().isEmpty ?? true) ||
+        // (!state.phoneNumber.value.isRight())
        // ||  (!state.bankAccountNumber.value.isRight())
 
 
