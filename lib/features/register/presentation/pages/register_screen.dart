@@ -36,7 +36,7 @@ class RegisterScreen extends StatelessWidget {
 
                   context.read<RegisterCubit>().registerConsumer();
                 },
-                isLoading: false,
+                getState: context.watch<RegisterCubit>().state.dataStatus,
               )
             ],
           ),

@@ -132,10 +132,10 @@ class RegisterForm extends StatelessWidget {
             CrudTestTextField(
               labelText: "Bank account number",
               textInputAction: TextInputAction.done,
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.text,
               textDirection: TextDirection.ltr,
               onChanged: cubit.bankAccountChanged,
- /*             autovalidateMode: state.showInvalidMessage
+             autovalidateMode: state.showInvalidMessage
                   ? AutovalidateMode.always
                   : AutovalidateMode.disabled,
               valid: (_) {
@@ -152,7 +152,7 @@ class RegisterForm extends StatelessWidget {
                   },
                   (_) => null,
                 );
-              },*/
+              },
             ),
             CrudTestSpace.margin18.hsp,
             CrudTestDatePicker(dateChanged: cubit.dateChanged),

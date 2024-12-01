@@ -23,7 +23,7 @@ void main() {
       phoneNumber: "09116602618",
       firstName: "dorsa",
       lastName: "afra",
-      bankAccountNumber: "123456",
+      bankAccountNumber: "US12ABCD1234",
       dateOfBirth: "2020/12/10");
 
   setUp(() async {

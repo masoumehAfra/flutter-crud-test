@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:mc_crud_test/features/register/presentation/bloc/register/register_cubit.dart';
 import '../../../../config/app_const_size/app_space.dart';
 
 class RegisterButton extends StatelessWidget {
-  final bool isLoading;
+  final GetDataStatus getState;
   final VoidCallback? onPressed;
 
   const RegisterButton(
-      {super.key, required this.isLoading, required this.onPressed});
+      {super.key, required this.getState, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +24,8 @@ class RegisterButton extends StatelessWidget {
             shape: WidgetStatePropertyAll(
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(4))),
           ),
-          onPressed: isLoading ? () {} : onPressed,
-          child: isLoading
+          onPressed: getState == GetDataStatus.loading ? () {} : onPressed,
+          child: getState == GetDataStatus.loading
               ? _loadingWidget(context)
               : const Text("Register",
                   maxLines: 1,
