@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mc_crud_test/features/register/presentation/widget/header_form.dart';
 import '../../../../config/app_const_size/app_space.dart';
+import '../bloc/register/register_cubit.dart';
 import '../widget/register_button.dart';
 import '../widget/register_form.dart';
 
@@ -30,7 +32,10 @@ class RegisterScreen extends StatelessWidget {
                 children: [HeaderForm(), RegisterForm()],
               ),
               RegisterButton(
-                onPressed: () {},
+                onPressed: () {
+
+                  context.read<RegisterCubit>().registerConsumer();
+                },
                 isLoading: false,
               )
             ],

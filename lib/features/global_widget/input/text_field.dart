@@ -142,7 +142,6 @@ class _CrudTestTextFieldState extends State<CrudTestTextField> {
         style: _textFieldStyle(context),
         maxLength: widget.maxLength,
         focusNode: _focusNode,
-
         enabled: widget.enabled,
         onFieldSubmitted: _focusNode.hasFocus ? widget.onSubmit : null,
         readOnly: widget.readOnly,
@@ -175,6 +174,20 @@ class _CrudTestTextFieldState extends State<CrudTestTextField> {
                     ? const Color(0xFF0085FF)
                     : Colors.transparent),
           ),
+          errorBorder:  OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: const BorderSide(
+              color: Colors.red,
+              width: 1.0, // Optional: Adjust border width for emphasis
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: const BorderSide(
+              color: Colors.red,
+              width: 1.0, // Optional: Adjust border width for emphasis
+            ),
+          ),
           alignLabelWithHint: (widget.maxLines ?? 1) != 1,
           isCollapsed: widget.isCollapsed,
           errorText: widget.errorText,
@@ -191,10 +204,12 @@ class _CrudTestTextFieldState extends State<CrudTestTextField> {
           icon: widget.iconWidget,
           hintStyle: _hintStyle(context),
         ),
+
         onChanged: (value) {
           setState(() {});
           widget.onChanged?.call(value);
         },
+
         autovalidateMode: widget.autovalidateMode,
         textInputAction: widget.textInputAction,
       ),

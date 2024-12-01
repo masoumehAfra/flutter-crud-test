@@ -12,4 +12,11 @@ extension StringExtension on String{
       r'^\+?\d{1,3}\s?\d{1,14}$',
     ).hasMatch(this);
   }
+
+
+  bool isValidBankAccountNumber() {
+    return RegExp(
+      r'^[A-Z]{2}[0-9]{2}[A-Z0-9]{1,30}$',
+    ).hasMatch(this);
+  }
 }

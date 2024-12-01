@@ -6,6 +6,7 @@ class CrudTestSpace{
 
   static const double margin32 = 32;
   static const double margin16 = 16;
+  static const double margin8 = 8;
   static const double margin18 = 18;
   static const double margin14 = 14;
 
